@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Orders</title>
+    <link rel="stylesheet" href="/static/orders.css">
+</head>
+<body>
+    <header style="background: linear-gradient(90deg, #6366f1 0%, #3b82f6 100%); padding: 18px 0; color: #fff; box-shadow: 0 2px 8px rgba(59,130,246,0.10);">
+        <div style="max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;">
+            <h1 style="margin: 0; font-size: 2em; font-weight: 700; letter-spacing: 1px; display: flex; align-items: center; gap: 16px;">
+                <span style="font-size:1.3em;vertical-align:middle;">📦</span>
+                <span>Orders</span>
+            </h1>
+            <nav style="display: flex; gap: 18px; align-items: center;">
+                <a href="/" style="display: flex; align-items: center; gap: 8px; color: #fff; text-decoration: none; font-weight: 600; font-size: 1.08em; background: linear-gradient(90deg, #6366f1 0%, #3b82f6 100%); padding: 10px 28px; border-radius: 12px; box-shadow: 0 2px 8px rgba(59,130,246,0.13); transition: background 0.2s, color 0.2s; border: 2px solid #fff;">
+                    <span style="font-size:1.2em;">🏠</span>
+                    <span>Home</span>
+                </a>
+                <a href="/tasks" style="display: flex; align-items: center; gap: 8px; color: #fff; text-decoration: none; font-weight: 600; font-size: 1.08em; background: linear-gradient(90deg, #3b82f6 0%, #6366f1 100%); padding: 10px 28px; border-radius: 12px; box-shadow: 0 2px 8px rgba(59,130,246,0.13); transition: background 0.2s, color 0.2s; border: 2px solid #fff;">
+                    <span style="font-size:1.2em;">📝</span>
+                    <span>Tasks</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+    <div class="container" style="background: transparent; box-shadow: none;">
+        <div style="display:flex;flex-direction:column;align-items:center;">
+            <form action="/orders/add" method="post" style="width:100%;max-width:420px;display:flex;justify-content:center;">
+                <div class="form-card" style="background: linear-gradient(120deg, #e0e7ff 0%, #f8fafc 100%); border-radius: 18px; box-shadow: 0 6px 32px rgba(99,102,241,0.13); padding: 32px 36px 28px 36px; display: flex; flex-direction: column; align-items: center; gap: 18px; position: relative; margin: 0 auto;">
+                    <div style="position: absolute; top: -28px; left: 50%; transform: translate(-50%, 0); background: #6366f1; color: #fff; border-radius: 50%; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 12px rgba(99,102,241,0.13); font-size: 2em;">
+                        <span>📝</span>
+                    </div>
+                    <h2 style="margin: 0 0 12px 0; font-size: 1.3em; color: #3b82f6; font-weight: 700; letter-spacing: 1px; text-align:center;">Add New Order</h2>
+                    <div style="width:100%;display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+                        <input type="text" name="date" placeholder="Date" required style="padding:12px 16px;border-radius:9px;border:1.5px solid #cbd5e1;font-size:1.08em;background:#fff;box-shadow:0 1px 4px rgba(59,130,246,0.04);" />
+                        <input type="text" name="id" placeholder="Order ID" required style="padding:12px 16px;border-radius:9px;border:1.5px solid #cbd5e1;font-size:1.08em;background:#fff;box-shadow:0 1px 4px rgba(59,130,246,0.04);" />
+                        <input type="text" name="name" placeholder="Name" required style="padding:12px 16px;border-radius:9px;border:1.5px solid #cbd5e1;font-size:1.08em;background:#fff;box-shadow:0 1px 4px rgba(59,130,246,0.04);grid-column:span 2;" />
+                        <input type="number" step="0.01" name="price" placeholder="Price" required style="padding:12px 16px;border-radius:9px;border:1.5px solid #cbd5e1;font-size:1.08em;background:#fff;box-shadow:0 1px 4px rgba(59,130,246,0.04);" />
+                        <input type="number" name="quantity" placeholder="Quantity" required style="padding:12px 16px;border-radius:9px;border:1.5px solid #cbd5e1;font-size:1.08em;background:#fff;box-shadow:0 1px 4px rgba(59,130,246,0.04);" />
+                    </div>
+                    <button type="submit" style="background: linear-gradient(90deg, #6366f1 0%, #3b82f6 100%); color: #fff; border: none; border-radius: 9px; padding: 14px 32px; font-size: 1.08em; font-weight: 600; cursor: pointer; transition: background 0.2s, box-shadow 0.2s; box-shadow: 0 2px 8px rgba(59,130,246,0.10); margin-top: 8px;">➕ Add Order</button>
+                </div>
+            </form>
+        </div>
+        <div style="margin-top:18px; position: relative; min-height: 600px;">
+            <div style="position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 700px; height: 700px; z-index: 0; pointer-events: none;">
+                <img src="company_logo.png" alt="Company Logo" style="width:100%;height:100%;opacity:0.43;object-fit:contain;" />
+            </div>
+            <table class="order-table" style="width:100%;border-collapse:separate;border-spacing:0 10px; background: #fff; border-radius: 18px; box-shadow: 0 6px 32px rgba(59,130,246,0.10); position: relative; z-index: 1;">
+                <thead>
+                    <tr style="background:#232946;color:#fff;">
+                        <th style="padding:14px 0;border-radius:10px 0 0 0;text-align:center;">Date</th>
+                        <th style="text-align:center;">Order ID</th>
+                        <th style="text-align:center;">Name</th>
+                        <th style="text-align:center;">Price</th>
+                        <th style="text-align:center;">Quantity</th>
+                        <th style="border-radius:0 10px 0 0;text-align:center;">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <th:block th:if="${#lists.isEmpty(orders)}">
+                        <tr>
+                            <td colspan="6" class="no-orders" style="text-align:center;">No orders yet. Add one above!</td>
+                        </tr>
+                    </th:block>
+                    <th:block th:each="order : ${orders}">
+                        <tr style="background:#fff;box-shadow:0 2px 8px rgba(99,102,241,0.07);border-radius:10px;">
+                            <td style="padding:12px 8px;text-align:center;"> <span th:text="${order.date}"></span> </td>
+                            <td style="padding:12px 8px;text-align:center;"> <span th:text="${order.id}"></span> </td>
+                            <td style="padding:12px 8px;text-align:center;"> <span th:text="${order.name}"></span> </td>
+                            <td style="padding:12px 8px;text-align:center;"> <span th:text="${order.price}"></span> </td>
+                            <td style="padding:12px 8px;text-align:center;"> <span th:text="${order.quantity}"></span> </td>
+                            <td style="padding:12px 8px;text-align:center;"> <span th:text="${order.total}"></span> </td>
+                        </tr>
+                    </th:block>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
