@@ -5,7 +5,11 @@
     <link rel="stylesheet" href="/static/tasks.css">
 </head>
 <body>
-    <header style="background: linear-gradient(90deg, #6366f1 0%, #3b82f6 100%); padding: 18px 0; color: #fff; box-shadow: 0 2px 8px rgba(59,130,246,0.10);">
+    <div style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-2;background:radial-gradient(circle at 50% 50%, #ffffff 0%, #f6fbff 18%, #eaf6fe 30%, #cbeafd 55%, #6ec6f7 100%);"></div>
+    <div style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1;display:flex;align-items:center;justify-content:center;pointer-events:none;">
+        <img src="company_logo.png" alt="Company Logo" style="width:600px;max-width:70vw;opacity:0.18;object-fit:contain;filter:drop-shadow(0 0px 0px #3b82f6a0);" />
+    </div>
+    <header style="background: linear-gradient(90deg, #6366f1 0%, #3b82f6 100%); padding: 18px 0; color: #fff; box-shadow: 0 2px 8px rgba(59,130,246,0.10); position:relative; z-index:1;">
         <div style="max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;">
             <h1 style="margin: 0; font-size: 2em; font-weight: 700; letter-spacing: 1px; display: flex; align-items: center; gap: 16px;">
                 <span style="font-size:1.3em;vertical-align:middle;">📝</span>
@@ -23,9 +27,9 @@
             </nav>
         </div>
     </header>
-    <div class="container" style="background: transparent; box-shadow: none; display: flex; flex-direction: column; align-items: center;">
+    <div class="container" style="background: transparent; box-shadow: none;">
         <div style="display:flex;flex-direction:column;align-items:center;">
-            <form action="/tasks/add" method="post" style="width:100%;max-width:420px;display:flex;justify-content:center;">
+            <form action="/tasks/add" method="post" style="width:100%;max-width:420px;display:flex;justify-content:center;margin-top:30px;">
                 <div class="form-card" style="background: linear-gradient(120deg, #e0e7ff 0%, #f8fafc 100%); border-radius: 18px; box-shadow: 0 6px 32px rgba(99,102,241,0.13); padding: 32px 36px 28px 36px; display: flex; flex-direction: column; align-items: center; gap: 18px; position: relative; margin: 0 auto;">
                     <div style="position: absolute; top: -28px; left: 50%; transform: translate(-50%, 0); background: #6366f1; color: #fff; border-radius: 50%; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 12px rgba(99,102,241,0.13); font-size: 2em;">
                         <span>📝</span>
@@ -39,9 +43,9 @@
                 </div>
             </form>
         </div>
-        <div style="margin-top:18px; position: relative; min-height: 400px; width: 100%;">
+        <div style="margin-top:18px; position: relative; min-height: 600px;">
             <div style="position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 700px; height: 700px; z-index: 0; pointer-events: none;">
-                <img src="company_logo.png" alt="Company Logo" style="width:100%;height:100%;opacity:0.43;object-fit:contain;" />
+                <img src="compan_logo.png" alt="Company Logo" style="width:100%;height:100%;opacity:0.43;object-fit:contain;" />
             </div>
             <table class="order-table" style="width:100%;border-collapse:separate;border-spacing:0 10px; background: #fff; border-radius: 18px; box-shadow: 0 6px 32px rgba(59,130,246,0.10); position: relative; z-index: 1;">
                 <thead>

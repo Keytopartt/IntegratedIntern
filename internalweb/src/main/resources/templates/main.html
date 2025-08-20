@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Main Categories</title>
+    <link rel="stylesheet" href="/static/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(120deg, #e0f2fe 0%, #bae6fd 100%);
+        }
+        .header {
+            background: #fff;
+            border-bottom-left-radius: 32px;
+            border-bottom-right-radius: 32px;
+            box-shadow: 0 2px 12px rgba(59,130,246,0.10);
+            padding: 32px 0 18px 0;
+            text-align: center;
+            position: relative;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2em;
+            font-weight: 800;
+            color: #232946;
+            letter-spacing: 1px;
+        }
+        .categories {
+            margin: 32px auto 0 auto;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .category {
+            background: linear-gradient(90deg, #34d399 0%, #60a5fa 100%);
+            color: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(59,130,246,0.10);
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 18px 24px;
+            font-size: 1.18em;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .category:hover {
+            box-shadow: 0 6px 24px rgba(34,211,99,0.13);
+            transform: translateY(-2px) scale(1.03);
+        }
+        .category-icon {
+            font-size: 1.5em;
+            background: rgba(255,255,255,0.18);
+            border-radius: 10px;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .bottom-nav {
+            position: fixed;
+            left: 0; right: 0; bottom: 0;
+            background: #34d399;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 48px;
+            border-top-left-radius: 18px;
+            border-top-right-radius: 18px;
+            box-shadow: 0 -2px 12px rgba(34,211,99,0.10);
+        }
+        .bottom-nav span {
+            font-size: 1.4em;
+            color: #fff;
+            opacity: 0.85;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .bottom-nav span:hover {
+            opacity: 1;
+        }
+        @media (max-width: 500px) {
+            .categories { max-width: 98vw; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Categories</h1>
+    </div>
+    <div class="categories">
+        <div class="category"><span class="category-icon">🧴</span> Plastic</div>
+        <div class="category"><span class="category-icon">⚗️</span> Glass</div>
+        <div class="category"><span class="category-icon">🛠️</span> Metal</div>
+        <div class="category"><span class="category-icon">🍏</span> Organics</div>
+        <div class="category"><span class="category-icon">📖</span> Paper</div>
+        <div class="category"><span class="category-icon">➕</span> Other</div>
+    </div>
+    <div class="bottom-nav">
+        <span title="Home">🏠</span>
+        <span title="Notifications">🔔</span>
+        <span title="Recycle">♻️</span>
+        <span title="Menu">☰</span>
+    </div>
+</body>
+</html>

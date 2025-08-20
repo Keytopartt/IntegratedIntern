@@ -1,12 +1,19 @@
+
 package com.internalweb.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "orders")
 public class Order {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String customerName;
     private String details;
     private boolean fulfilled;
 
-    // New fields for table columns
     private String date;
     private String name;
     private Double price;
@@ -14,6 +21,7 @@ public class Order {
     private Double total;
 
     public Order() {}
+
     public Order(Long id, String customerName, String details) {
         this.id = id;
         this.customerName = customerName;
@@ -21,7 +29,6 @@ public class Order {
         this.fulfilled = false;
     }
 
-    // New constructor for all fields
     public Order(Long id, String customerName, String details, boolean fulfilled, String date, String name, Double price, Integer quantity, Double total) {
         this.id = id;
         this.customerName = customerName;
@@ -33,6 +40,7 @@ public class Order {
         this.quantity = quantity;
         this.total = total;
     }
+
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
     public String getCustomerName() { return customerName; }
